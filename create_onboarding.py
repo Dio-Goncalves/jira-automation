@@ -1,32 +1,31 @@
-import requests
-from requests.auth import HTTPBasicAuth
+from jira_client import create_requests
 
-from config import (
-    JIRA_URL,
-    JIRA_EMAIL,
-    JIRA_API_TOKEN,
-)
+SERVICE_DESK_ID = 1
+ONBOARDING_REQUEST_TYPE = 8
 
-url = f"{JIRA_URL}/rest/api/3/myself"
 
-response = requests.get(
-    url,
-    auth=HTTPBasicAuth(JIRA_EMAIL, JIRA_API_TOKEN),
-    headers={
-        "Accept": "application/json"
+def create_employee_onboarding(employee):
+    summary = (
+        f"New employee onboarding - "
+        f"{employee['first_name']} {employee['last_name']}"
+    )
+
+    description = (
+        f"Employee: {employee['first_name']} {employee['last_name']}\n"
+        f"Email: {employee['email']}\n"
+        f"Department: {employee['department']}\n"
+        f"Manager: {employee['manager']}"
+    )
+
+    fields = {
+        "summary": summary,
+        "description": description,
     }
-)
 
-print(f"Status Code: {response.status_code}")
+    response = create_requests(
+        SERVICE_DESK_ID,
+        ONBOARDING_REQUEST_TYPE,
+        fields,
+    )
 
-if response.status_code == 200:
-    me = response.json()
-
-    print()
-    print("Authentication Successful!")
-    print("--------------------------")
-    print(f"Name: {me['displayName']}")
-    print(f"Account ID: {me['accountId']}")
-    print(f"Email: {me.get('emailAddress', 'Hidden by Atlassian')}")
-else:
-    print(response.text)
+    return response
