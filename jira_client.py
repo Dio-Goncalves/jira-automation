@@ -24,7 +24,7 @@ def create_requests(service_desk_id, request_type_id, fields):
         "requestFieldValues": fields
     }
 
-    response = request.post(
+    response = requests.post(
         url,
         json=payload,
         auth=auth,

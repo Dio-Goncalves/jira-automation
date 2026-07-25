@@ -1,0 +1,4 @@
+first_name,last_name,email,department,manager,vpn,laptop
+John,Doe,john.doe@company.com,IT,Alice,Yes,Yes
+Sarah,Smith,sarah.smith@company.com,HR,Bob,No,Yes
+Mike,Johnson,mike.johnson@company.com,Finance,Alice,Yes,No
