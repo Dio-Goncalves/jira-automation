@@ -1,20 +1,21 @@
 import csv
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+
+CSV_FILE = BASE_DIR / "data" / "employees.csv"
 
 
-def read_employees(filename):
+def read_employees():
     employees = []
-    with open(filename, newline="", encoding="utf-8") as csvfile:
-        reader = csv.DictReader(csvfile)
+    with open(CSV_FILE, newline="", encoding="utf-8") as file:
+        reader = csv.DictReader(file)
         for row in reader:
             employees.append(row)
     return employees
 
 
-employees = read_employees("employees.csv")
-
-for employee in employees:
-    print(employee["first_name"])
-    print(employee["last_name"])
-    print(employee["department"])
-    print(employee["vpn"])
-    print("-" * 30)
+if __name__ == "__main__":
+    employees = read_employees()
+    for employee in employees:
+        print(employee)
