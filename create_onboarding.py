@@ -20,6 +20,11 @@ def create_employee_onboarding(employee):
     fields = {
         "summary": summary,
         "description": description,
+        "customfield_10118": employee["first_name"],
+        "customfield_10120": employee["last_name"],
+        "customfield_10123": employee["email"],
+        "customfield_10131": employee["department"],
+        "customfield_10132": employee["manager"],
     }
 
     response = create_requests(
