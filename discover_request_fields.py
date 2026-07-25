@@ -32,5 +32,11 @@ data = response.json()
 for field in data["requestTypeFields"]:
     print(f"Name: {field['name']}")
     print(f"ID: {field['fieldId']}")
+    print(field["jiraSchema"])
+    print(field["validValues"])
     print(f"Required: {field['required']}")
     print("-" * 40)
+
+for field in data["requestTypeFields"]:
+    if field["fieldId"] == "customfield_10132":
+        pprint(field)

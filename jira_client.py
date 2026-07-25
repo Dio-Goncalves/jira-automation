@@ -24,6 +24,11 @@ def create_requests(service_desk_id, request_type_id, fields):
         "requestFieldValues": fields
     }
 
+    from pprint import pprint
+    print("\nPayload being sent:")
+    pprint(payload)
+    print
+
     response = requests.post(
         url,
         json=payload,
@@ -52,3 +57,7 @@ def get_request_types(service_desk_id):
     return _get(
         f"/rest/servicedeskapi/servicedesk/{service_desk_id}/requesttype"
     )
+
+
+def search_users(query):
+    return _get(f"/rest/api/3/user/search?query={query}")

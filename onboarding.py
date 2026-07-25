@@ -7,9 +7,12 @@ for employee in employees:
     response = create_employee_onboarding(employee)
     print(response.status_code)
 
-data = response.json()
-
-print(
-    f"Created request {data['issueKey']}"
-    f"for {employee['first_name']} {employee['last_name']}"
-)
+    if response.status_code == 201:
+        data = response.json()
+        print(
+            f"Created request {data['issueKey']}"
+            f"for {employee['first_name']} {employee['last_name']}"
+        )
+    else:
+        print(response.status_code)
+        print(response.text)
