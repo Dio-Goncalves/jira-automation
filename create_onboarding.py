@@ -1,3 +1,7 @@
+from jira_client import (
+    create_requests,
+    get_user_account_id,
+)
 from jira_client import create_requests
 
 SERVICE_DESK_ID = 1
@@ -20,6 +24,11 @@ DEPARTMENTS = {
 
 
 def create_employee_onboarding(employee):
+
+    manager_account_id = get_user_account_id(
+        employee["manager"]
+    )
+
     summary = (
         f"New employee onboarding - "
         f"{employee['first_name']} {employee['last_name']}"
@@ -41,7 +50,11 @@ def create_employee_onboarding(employee):
         "customfield_10131": {
             "id": DEPARTMENTS[employee["department"]]
         },
-        "customfield_10132": employee["manager"],
+        "customfield_10132": [
+            {
+                "accountId": manager_account_id
+            }
+        ]
     }
 
     response = create_requests(

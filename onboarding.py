@@ -11,7 +11,7 @@ for employee in employees:
         data = response.json()
         print(
             f"Created request {data['issueKey']}"
-            f"for {employee['first_name']} {employee['last_name']}"
+            f" for {employee['first_name']} {employee['last_name']}"
         )
     else:
         print(response.status_code)

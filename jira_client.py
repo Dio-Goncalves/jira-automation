@@ -61,3 +61,14 @@ def get_request_types(service_desk_id):
 
 def search_users(query):
     return _get(f"/rest/api/3/user/search?query={query}")
+
+
+def get_user_account_id(name):
+    response = search_users(name)
+
+    users = response.json()
+
+    if not users:
+        raise ValueError(f"No Jira user found matching '{name}'")
+
+    return users[0]["accountId"]
