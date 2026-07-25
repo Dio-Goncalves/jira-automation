@@ -4,7 +4,7 @@ from requests.auth import HTTPBasicAuth
 
 from config import *
 
-url = f"{JIRA_URL}/rest/servicedeskapi/servicedesk"
+url = f"{JIRA_URL}/rest/servicedeskapi/servicedesk/1/requesttype"
 
 response = requests.get(
     url,
@@ -19,6 +19,10 @@ print(f"Status: {response.status_code}")
 
 project = response.json()
 
-print(type(project))
-print(project.keys())
-pprint(project)
+for request_type in project["values"]:
+    print(f"Request Type id: {request_type['id']}")
+    print(f"Request Type name: {request_type['name']}")
+    print(f"Request Type description: {request_type['description']}")
+    print()
+    print("-" * 30)
+    print()
