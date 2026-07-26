@@ -37,6 +37,7 @@ for field in data["requestTypeFields"]:
     print(f"Required: {field['required']}")
     print("-" * 40)
 
-for field in data["requestTypeFields"]:
-    if field["fieldId"] == "customfield_10132":
-        pprint(field)
+# The loop below was to troubleshoot a field that I was having trouble with. I'll keep this here just to mantain traceability and posible future reference
+# for field in data["requestTypeFields"]:
+#    if field["fieldId"] == "customfield_10132":
+#        pprint(field)
