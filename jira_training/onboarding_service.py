@@ -6,6 +6,8 @@ from jira_training.jira_client import (
 SERVICE_DESK_ID = 1
 ONBOARDING_REQUEST_TYPE = 8
 
+# Since the Departments field is an select list, below we have to describe all the valid options and store it in a variable. Below we'll mention this in 'fields'.
+
 DEPARTMENTS = {
     "Customer Service": "10073",
     "Engineering": "10074",
@@ -28,6 +30,8 @@ def create_employee_onboarding(employee):
         employee["manager"]
     )
 
+# Making use of the imported 'get_user_account_id' function from 'jira_client.py' to create a new 'manager_account_id' function that'll find the id of the manager name fed by the CSV file.    
+    
     summary = (
         f"New employee onboarding - "
         f"{employee['first_name']} {employee['last_name']}"
@@ -40,6 +44,9 @@ def create_employee_onboarding(employee):
         f"Manager: {employee['manager']}"
     )
 
+# Since Department is a select list and not a text field (option and not a string) we have to send an option object. Hence why its written for the custom field related to it.
+# The formatting is also changed for the manager custom field. This is because its an array type field. Here we make use of the 'manager_account_id' function to solve the manager's name.
+    
     fields = {
         "summary": summary,
         "description": description,
