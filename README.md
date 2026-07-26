@@ -26,8 +26,7 @@ The project also includes discovery scripts used to inspect Jira Cloud metadata,
  - Python 3;  
  - Jira Cloud REST API;  
  - Jira Service Management;  
- - Git;  
- - Bitbucket.  
+ - Git. 
 
 ## Project Structure
 
@@ -138,4 +137,4 @@ During this project I learned:
  ## Future Improvements
 
  - Child request creation;  
- - Logging; 
+ - Logging. 
