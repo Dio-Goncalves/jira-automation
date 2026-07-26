@@ -31,7 +31,7 @@ The project also includes discovery scripts used to inspect Jira Cloud metadata,
 
 ## Project Structure
 
-```text
+```
 |-- data  
 |   `-- employees.csv  
 |-- jira_training  
