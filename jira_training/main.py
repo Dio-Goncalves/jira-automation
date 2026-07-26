@@ -1,5 +1,5 @@
 from jira_training.csv_reader import read_employees
-from jira_training.create_onboarding import create_employee_onboarding
+from jira_training.onboarding_service import create_employee_onboarding
 
 employees = read_employees()
 
