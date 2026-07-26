@@ -96,7 +96,7 @@ pip install -r requirements.txt
 ## Configuration
 
 Directly change the variables on the `config.py` or you can go for a cleaner approach and use environment variables.  
-The `config.py` file is already prepared to be used with environment variables, so you can just proceed with creating these and leave the `config.py` file untouched.  
+The `config.py` file is already prepared to be used with environment variables, using [python-dotenv](https://pypi.org/project/python-dotenv/). You can just create the environment variables in an `.env` file and leave the `config.py` file untouched.  
 The variables must contain:  
 ```
 JIRA_URL = "https://your-domain.atlassian.net"
