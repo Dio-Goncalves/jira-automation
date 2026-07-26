@@ -63,11 +63,13 @@ The project also includes discovery scripts used to inspect Jira Cloud metadata,
 ## Installation
 
 **Clone the repository**  
+
 ```
 git clone <repository-url>
 ```
 
 **Create a virutal environment**
+
 ```
 python3 -m venv .venv
 ```
@@ -75,14 +77,19 @@ python3 -m venv .venv
 **Activate it**  
 
 Linux/macOS
+
 ```
 source .venv/bin/activate
 ```
+
 Windows
+
 ```
 .venv/Scripts/activate
 ```
+
 **Install dependencies** 
+
 ```
 pip install -r requirements.txt
 ```
@@ -101,14 +108,19 @@ JIRA_API_TOKEN = "your-api-token"
 ## Usage examples
 
 **Run the main script**
+
 ```
 python3 -m jira_training.main
 ```
+
 **Discover available request fields**
+
 ```
 python3 -m jira_training.discovery.request_fields
 ```
+
 **Discover request types**
+
 ```
 python3 -m jira_training.discovery.request_types
 ```
