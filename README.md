@@ -62,3 +62,41 @@ The project also includes discovery scripts used to inspect Jira Cloud metadata,
 
 ## Installation
 
+**Clone the repository**  
+```
+git clone <repository-url>
+```
+
+**Create a virutal environment**
+```
+python3 -m venv .venv
+```
+
+**Activate it**  
+
+Linux/macOS
+```
+source .venv/bin/activate
+```
+Windows
+```
+.venv/Scripts/activate
+```
+**Install dependencies** 
+```
+pip install -r requirements.txt
+```
+
+## Configuration
+
+Directly change the variables on the `config.py` or you can go for a cleaner approach and use environment variables.  
+The `config.py` file is already prepared to be used with environment variables, so you can just proceed with creating these and leave the `config.py` file untouched.  
+The variables must contain:  
+```
+JIRA_URL = "https://your-domain.atlassian.net"
+JIRA_EMAIL = "your-email@email.com"
+JIRA_API_TOKEN = "your-api-token"
+```
+
+## Usage
+
