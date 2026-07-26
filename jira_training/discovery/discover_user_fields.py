@@ -1,4 +1,4 @@
-from jira_client import search_users
+from jira_training.jira_client import search_users
 from pprint import pprint
 import requests
 from requests.auth import HTTPBasicAuth
