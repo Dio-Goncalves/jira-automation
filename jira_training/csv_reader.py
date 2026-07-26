@@ -1,9 +1,9 @@
 import csv
 from pathlib import Path
 
-BASE_DIR = Path(__file__).parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-CSV_FILE = BASE_DIR / "data" / "employees.csv"
+CSV_FILE = PROJECT_ROOT / "data" / "employees.csv"
 
 
 def read_employees():
