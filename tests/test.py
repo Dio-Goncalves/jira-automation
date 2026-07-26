@@ -1,4 +1,4 @@
-from config import *
+from jira_training.config import *
 
 print(JIRA_URL)
 print(JIRA_EMAIL)
