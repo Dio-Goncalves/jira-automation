@@ -58,7 +58,7 @@ The project also includes discovery scripts used to inspect Jira Cloud metadata,
     |-- create_issue.py  
     |-- create_request.py  
     `-- test.py  
- ```
+```
 
 ## Installation
 
