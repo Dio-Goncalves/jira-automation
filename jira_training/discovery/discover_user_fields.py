@@ -3,7 +3,7 @@ from pprint import pprint
 import requests
 from requests.auth import HTTPBasicAuth
 
-from config import (
+from jira_training.config import (
     JIRA_URL,
     JIRA_EMAIL,
     JIRA_API_TOKEN

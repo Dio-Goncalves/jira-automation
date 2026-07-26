@@ -2,7 +2,7 @@ from pprint import pprint
 import requests
 from requests.auth import HTTPBasicAuth
 
-from config import *
+from jira_training.config import *
 
 url = f"{JIRA_URL}/rest/servicedeskapi/servicedesk/1/requesttype"
 
