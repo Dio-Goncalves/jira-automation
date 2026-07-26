@@ -98,5 +98,32 @@ JIRA_EMAIL = "your-email@email.com"
 JIRA_API_TOKEN = "your-api-token"
 ```
 
-## Usage
+## Usage examples
 
+**Run the main script**
+```
+python3 -m jira_training.main
+```
+**Discover available request fields**
+```
+python3 -m jira_training.discovery.request_fields
+```
+**Discover request types**
+```
+python3 -m jira_training.discovery.request_types
+```
+
+## Lessons Learned
+
+During this project I learned:  
+ - Jira Cloud REST API authentication;  
+ - Working with Service Management request endpoints;  
+ - Discovering Jira metadata dynamically;  
+ - Handling different Jira field types;  
+ - Building reusable API clients in Python;
+ - Organizing a Python project into reusable modules.  
+
+ ## Future Improvements
+
+ - Child request creation;  
+ - Logging; 
