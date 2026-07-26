@@ -2,7 +2,7 @@ from jira_client import (
     create_requests,
     get_user_account_id,
 )
-from jira_client import create_requests
+from jira_training.jira_client import create_requests
 
 SERVICE_DESK_ID = 1
 ONBOARDING_REQUEST_TYPE = 8
