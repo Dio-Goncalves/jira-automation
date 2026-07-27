@@ -6,7 +6,7 @@ from jira_training.jira_client import (
 SERVICE_DESK_ID = 1
 ONBOARDING_REQUEST_TYPE = 8
 
-# Since the Departments field is an select list, below we have to describe all the valid options and store it in a variable. Below we'll mention this in 'fields'.
+# Since the Departments field is a select list, below we have to describe all the valid options and store it in a variable. Below we'll mention this in 'fields'.
 
 DEPARTMENTS = {
     "Customer Service": "10073",
